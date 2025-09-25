@@ -93,7 +93,7 @@ try:
         mensagens = ler_mensagens()
         novas_mensagens = []
 
-        # Pega apenas mensagens a última ignorada
+        # Pega apenas mensagens a última ignorada -- ainda não sei pq n funciona
         for pre_text, autor, texto in mensagens:
             if ultima_msg_ignoradas is not None and pre_text <= ultima_msg_ignoradas:
                 continue
@@ -109,7 +109,7 @@ try:
                     resposta = f"{autor_alvo} Tomou Gap {contagem} vezes"
                     enviar_mensagem(resposta)
 
-        # Atualiza a última mensagem ignorada
+        # Atualiza a last mensagem ignorada -- não funciona, não sei pq
         if mensagens:
             ultima_msg_ignoradas = mensagens[-1][0]
 
