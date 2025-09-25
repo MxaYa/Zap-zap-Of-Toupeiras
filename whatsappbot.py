@@ -15,7 +15,7 @@ grupo_alvo = "Meu teste"
 gatilho = "gap"
 autor_alvo = "Pai 2"
 contagem = 0
-historico = set()  # Para evitar duplicatas
+historico = set()
 
 #Configuração do Chrome
 profile_dir = os.path.join(os.getcwd(), "wpp_session")
