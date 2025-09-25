@@ -1,0 +1,6 @@
+2025/09/24-22:51:07.802 50f8 Reusing MANIFEST D:\TomaGap\wpp_session\Default\Local Storage\leveldb/MANIFEST-000001
+2025/09/24-22:51:07.806 50f8 Recovering log #19
+2025/09/24-22:51:07.808 50f8 Reusing old log D:\TomaGap\wpp_session\Default\Local Storage\leveldb/000019.log 
+2025/09/24-23:10:21.119 6b34 Level-0 table #24: started
+2025/09/24-23:10:21.123 6b34 Level-0 table #24: 13954 bytes OK
+2025/09/24-23:10:21.124 6b34 Delete type=0 #19
