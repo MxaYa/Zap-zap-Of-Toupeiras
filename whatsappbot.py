@@ -29,10 +29,10 @@ options.add_argument(f"--user-data-dir={profile_dir}")
 service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service, options=options)
 driver.get("https://web.whatsapp.com/")
-print("Abra o QR code no celular e faça a leitura.")
+print("Coloque o QR code.")
 wait = WebDriverWait(driver, 60)
 
-#Abrir grupo
+#Abrir grupo -- esqueci de colocar pra clicar no grupo nessa budanga
 def abrir_grupo(grupo_alvo):
     campo_busca_xpath = '//div[@contenteditable="true"][@data-tab="3"]'
     campo_busca = wait.until(EC.presence_of_element_located((By.XPATH, campo_busca_xpath)))
@@ -44,7 +44,7 @@ def abrir_grupo(grupo_alvo):
     grupo = wait.until(EC.presence_of_element_located((By.XPATH, f"//span[@title='{grupo_alvo}']")))
     driver.execute_script("arguments[0].click();", grupo)
     wait.until(EC.presence_of_element_located((By.XPATH, '//div[@data-pre-plain-text]')))
-    print(f"Grupo '{grupo_alvo}' aberto com sucesso.")
+    print(f"Grupo '{grupo_alvo}' aberto.")
 
 #Ler mensagens
 def ler_mensagens():
@@ -84,11 +84,11 @@ if mensagens_existentes:
     ultima_msg_ignoradas = mensagens_existentes[-1][0]  # apenas marcar, não processar
 else:
     ultima_msg_ignoradas = None
-print("Mensagens antigas ignoradas. Bot pronto para novas mensagens.")
+print("Bot pronto")
 
 #Monitoramento
 try:
-    print("--- Bot iniciado. Aguardando novas mensagens... ---")
+    print("Bot iniciado.")
     while True:
         mensagens = ler_mensagens()
         novas_mensagens = []
@@ -116,5 +116,5 @@ try:
         time.sleep(0.5)
 
 except KeyboardInterrupt:
-    print("\n--- Bot encerrado ---")
+    print("\n Bot encerrado")
     print(f"Resumo: {autor_alvo} falou '{gatilho}' {contagem} vezes.")
